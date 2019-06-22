@@ -1,0 +1,18 @@
+{
+  "name": "play-from-youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-progress": "^2.1.1",
+    "lame": "^1.2.4",
+    "music-metadata": "^4.1.1",
+    "speaker": "^0.4.2"
+  }
+}
