@@ -1,11 +1,11 @@
-// dependencies
+// Dependencies
 const { Bar, Presets } = require('cli-progress');
 const mm = require('music-metadata');
 const { Decoder } = require('lame');
 const Speaker = require('speaker');
 const fs = require('fs');
 
-// play a song wuth the path
+// Play a song wuth the path
 (async function play(songPath) {
   if (!songPath) {
     return;
