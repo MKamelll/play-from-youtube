@@ -8,6 +8,7 @@ function audioDetails(videoUrl) {
       reject('Come on human, where is the video url?');
     }
 
+    // Get all info of a video url
     ydl.getInfo(videoUrl, (err, info) => {
       if (err) reject('Could not get info!', err);
       const songName = info.title;
