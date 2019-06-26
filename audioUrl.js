@@ -1,6 +1,5 @@
 // Dependencies
 const ydl = require('youtube-dl');
-const url = process.argv[2] || false;
 
 // Extract info
 function audioDetails(videoUrl) {
