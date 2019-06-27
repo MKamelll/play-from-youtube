@@ -12,8 +12,10 @@
   "dependencies": {
     "@microlink/youtube-dl": "^2.0.0",
     "cli-progress": "^2.1.1",
+    "fluent-ffmpeg": "^2.1.2",
     "lame": "^1.2.4",
     "music-metadata": "^4.1.1",
+    "node-fetch": "^2.6.0",
     "speaker": "^0.4.2",
     "youtube-dl": "^2.0.0"
   }

@@ -27,8 +27,8 @@ function audioDetails(videoUrl) {
 function getBestAudio(info) {
   // Get only results that contain audio only in their
   // format description
-  const audioResultsOnly = info.formats.filter(result =>
-    result.format.includes('audio only')
+  const audioResultsOnly = info.formats.filter(
+    result => result.format.includes('audio only') && result.acodec == 'opus'
   );
 
   // Check the higher quality one of all audio urls
@@ -44,7 +44,10 @@ function getBestAudio(info) {
     },
     {}
   );
-  return bestQualityAudio.url;
+  return {
+    url: bestQualityAudio.url,
+    ext: bestQualityAudio.ext
+  };
 }
 
 // Exports

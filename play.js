@@ -4,7 +4,7 @@ const mm = require('music-metadata');
 const { Decoder } = require('lame');
 const Speaker = require('speaker');
 const fs = require('fs');
-
+const { PassThrough } = require('stream');
 // Play a song wuth the path
 (async function play(songPath) {
   if (!songPath) {
@@ -17,7 +17,7 @@ const fs = require('fs');
   const mimeType = 'audio/mp3';
 
   // Song length in seconds
-  const songlengthInSeconds = await getSonglength(songPath, mimeType, songSize);
+  let songlengthInSeconds = await getSonglength(songPath, mimeType, songSize);
   songlengthInSeconds = songlengthInSeconds + 1; // Add the additional second of the setTimeout
   let secondsPassed = 0;
 
@@ -58,8 +58,16 @@ const fs = require('fs');
     }, 1000);
   });
 
+  const log = new PassThrough();
+  log.on('data', chunk => {
+    console.log(chunk.length);
+  });
+
   // Play
-  songStream.pipe(decoder).pipe(speaker);
+  songStream
+    .pipe(log)
+    .pipe(decoder)
+    .pipe(speaker);
 })('song.mp3');
 
 // Get the song size
