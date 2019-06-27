@@ -1,5 +1,4 @@
 dependencies:
-  '@microlink/youtube-dl': 2.0.0
   cli-progress: 2.1.1
   fluent-ffmpeg: 2.1.2
   lame: 1.2.4
@@ -9,18 +8,6 @@ dependencies:
   youtube-dl: 2.0.0
 lockfileVersion: 5.1
 packages:
-  /@microlink/youtube-dl/2.0.0:
-    dependencies:
-      hh-mm-ss: 1.2.0
-      mkdirp: 0.5.1
-      request: 2.88.0
-      streamify: 0.2.9
-    dev: false
-    engines:
-      node: '>= 8'
-    requiresBuild: true
-    resolution:
-      integrity: sha512-B2DqRrDHFMu1MsBTq6ZAKR4BtKgvOK91Ci9EQiMVbSGC1/3UIPxpIYP4Py4kzcS94B++zVSMirhnCgX//5Qs4w==
   /ajv/6.10.0:
     dependencies:
       fast-deep-equal: 2.0.1
@@ -644,7 +631,6 @@ packages:
     resolution:
       integrity: sha1-o97wa6XjmuZEhQu0yirUEStIVek=
 specifiers:
-  '@microlink/youtube-dl': ^2.0.0
   cli-progress: ^2.1.1
   fluent-ffmpeg: ^2.1.2
   lame: ^1.2.4

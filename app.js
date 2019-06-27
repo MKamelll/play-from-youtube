@@ -6,11 +6,14 @@ const fetch = require('node-fetch');
 const Speaker = require('speaker');
 const lame = require('lame');
 
-// Parse the args for the url
-const audioUrl = 2 in process.argv ? process.argv[2] : false;
+async function parseUrls() {
+  // Parse the args for the url
+  const audioUrl = 2 in process.argv ? process.argv[2] : false;
+  await play(audioUrl);
+}
 
 // Play a song with the url
-(async function play() {
+async function play(audioUrl) {
   if (!audioUrl) {
     return;
   }
@@ -79,4 +82,9 @@ const audioUrl = 2 in process.argv ? process.argv[2] : false;
     .toFormat(format)
     .pipe(mp3Decoder)
     .pipe(speaker);
-})(audioUrl);
+}
+
+// Exports
+module.exports = {
+  parseUrls
+};
